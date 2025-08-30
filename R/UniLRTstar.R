@@ -148,7 +148,7 @@ UniLRTstar <- function(sample_data, significance_level){
     return(var0)
   }
   sample_data <- lapply(sample_data, function(x) x[!is.na(x)])
-  num_samples = 20000
+  num_samples = 100000
   num_datasets <- length(sample_data)
   n <- sapply(sample_data, length)
   lambda_values_star <- numeric(num_samples)
@@ -170,6 +170,7 @@ UniLRTstar <- function(sample_data, significance_level){
   }
   return(paste( "Peak:", pk, "; Critical value:", quantile_value, "; UniLRT Test statistic:", lambda, "; Result:", result))
 }
+
 
 
 
